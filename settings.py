@@ -14,7 +14,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 1.00,
     'participation_fee': 0.00,
-    'main_part_round_num' : 5,  #Edit the number of rounds here and in the models.py of the respective App
+    'main_part_round_num' : 5,  #Edit the number of rounds here or in the models.py of the respective App
     'doc': "",
 }
 
@@ -22,7 +22,7 @@ SESSION_CONFIGS = [
     {
         # Game 1 - Holt & Laury, multiple price list
         'name': 'production',
-        'display_name': "Full game for production",
+        'display_name': "Consent + Games + Survey for production",
         'num_demo_participants': 1,
         'app_sequence': ['Consent', 'mpl',
             # Elicit the strategy profile using the strategy method first,
@@ -30,16 +30,9 @@ SESSION_CONFIGS = [
             # Given the elicitation, students now know how the opponent plays.
             'trust_investor', 
             'guess_two_thirds', 
-                # This game needs an older version of oTree, leading to hosting problem
-            # MISSING game - competitiveness
-            # Here, need to simplify the knapsack game to be one app alone
             'simple_knapsack', 
             'survey'
             ],
-        # These are two options for the Competitiveness game
-        # 'task': 'SumNumbers',
-        # 'task_params': {'num_digits': 5,
-        #                 'digits_range': [0, 99]},
     },
     # Test each game individually
     {
@@ -85,17 +78,10 @@ SESSION_CONFIGS = [
     dict(
         # Concluding survey: ask about gender and other survey questions
         name='survey',
-        display_name='Survey - test',
+        display_name='Survey - Test',
         num_demo_participants=1,
         app_sequence=['survey'],
     ),
-    {
-        # This offers a 24/7 access to a button-free consent form
-        'name': 'Intro_Standalone',
-        'display_name': "Consent Form - Standalone",
-        'num_demo_participants': 1,
-        'app_sequence': ['Consent_Standalone'],
-    },
 ]
 
 ROOMS = [
@@ -136,6 +122,7 @@ USE_POINTS = True
 
 # for flexibility, you can set it in the environment variable OTREE_AUTH_LEVEL
 AUTH_LEVEL = environ.get('OTREE_AUTH_LEVEL')
+AUTH_LEVEL = "STUDY"
 
 ADMIN_USERNAME = 'admin'
 # for security, best to set admin password in an environment variable
@@ -144,7 +131,7 @@ ADMIN_PASSWORD = environ.get('OTREE_ADMIN_PASSWORD')
 # Consider '', None, and '0' to be empty/false
 DEBUG = (environ.get('OTREE_PRODUCTION') in {None, '', '0'})
 
-DEMO_PAGE_INTRO_HTML = """ """
+DEMO_PAGE_INTRO_HTML = """"""
 
 # don't share this with anybody. (This is a newly created secrete key from a burner empty repo)
 SECRET_KEY = 'blahblah'

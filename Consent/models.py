@@ -12,10 +12,10 @@ from otree.api import (
 from django import forms as djforms
 
 
-author = 'Your name here'
+author = 'Linfeng Li'
 
 doc = """
-Your app description
+To present consent info, and collect the decision to participate via the checkbox.
 """
 
 

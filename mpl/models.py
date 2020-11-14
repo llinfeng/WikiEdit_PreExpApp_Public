@@ -8,6 +8,7 @@ from random import randrange
 
 import datetime
 
+# This game is adopted from Felix's repo, with a BDM layer.
 author = 'Felix Holzmeister'
 
 doc = """
