@@ -1,0 +1,45 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 1
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        How competitive do you consider yourself?
+        </p>
+        <p>
+        Please choose a value on the scale below, where the value 0 means "not
+        competitive at all" and the value 10 means "very competitive".
+        </p>
+        {% formfield player.competitiveness %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Generally speaking, would you say that most people can be trusted or
+        that you can't be too careful in dealing with people?
+        </p>
+        {% formfield player.trust %}
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

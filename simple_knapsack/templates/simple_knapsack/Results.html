@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results & Feedback
+{% endblock %}
+
+{% block content %}
+    In the following table you can review your selection and the resulting value for each round.
+    <br>
+    <br>
+    <p id="result_table_placeholder"></p>
+    <br>
+    <br>
+    The total value of all rounds is {{sumvalue_cent}}&#162;. This equals ${{sumvalue_dollar}}.
+    <br>
+    Combined with your fixed reward of {{fixed_reward_dollar}}, your total payoff for this HIT is <b>{{total_payoff}}</b>.
+    <br>
+    <br>
+    Thank you very much for your participation. Have a nice day!
+    <br>
+    <br>
+    {% next_button %}
+
+
+    <!-- Input Tags to get Data from oTree -->
+    <input type="hidden" name="{{ result_table }}" id="id_result_table" />
+
+    <script src="/static/java_script/create_result_table.js"></script>
+
+{% endblock %}
+
+

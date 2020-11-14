@@ -1,0 +1,46 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 4
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Which of the following do you identify with?
+        </p>
+        {% formfield player.gender %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your ethnicity?
+        </p>
+        {% formfield player.ethinicity %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your major?
+        </p>
+        {% formfield player.major %}
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

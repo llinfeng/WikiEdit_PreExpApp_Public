@@ -1,0 +1,71 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Questionnaire
+{% endblock %}
+
+{% block content %}
+
+    Please take a minute to indicate how much you agree to the following statements:
+    <br>
+    <p id="questionnaire_placeholder"></p>
+    <!-- <button type="button" class="normal-button" onclick="saveSelection()">Test</button> -->
+    <br>
+    <p id="message"><br></p>
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button" id="Next_Button" onclick="saveSelection()" style="float: right;">Next</button>
+    <br>
+    <br>
+    <p style="text-align:right">Please <b>answer all questions to continue!</b></p>
+    
+
+    <!-- Input Tags to get Data from oTree -->
+    <input type="hidden" name="{{ questionnaire_1 }}" id="id_questionnaire_1" />
+
+    <!-- Input Tags to record answers -->
+    <input type="hidden" name="questionnaire_answers" id="id_answers" />
+
+    <!-- Debug Information -->
+    {{ form.errors }}
+   
+    <script>
+    $('#questionnaire_placeholder').html(document.getElementById("id_questionnaire_1").name);
+    
+    //When the window is loaded we assign the onclick functions
+    $(function(){
+        checkIfAllQuestionsAnsweredAndSave();
+        $(".answer").click(function(){
+            checkIfAllQuestionsAnsweredAndSave();
+            
+        })
+        
+    });
+
+    //Check if all questions are answered and try to save
+    function checkIfAllQuestionsAnsweredAndSave(){
+        var table = document.getElementById("likert_table");
+        var rows = table.rows;
+
+        var answers = [];
+
+        try{
+            for(var i = 1; i < (rows.length - 1); i++){
+                var answer = document.querySelector('input[name=q_' + i.toString() + ']:checked').value;
+                answers.push(answer);
+            }
+            console.log(answers);
+            document.getElementById("id_answers").value = answers;
+            document.getElementById("Next_Button").disabled = false;
+        }
+        catch(err){
+            document.getElementById("Next_Button").disabled = true;
+            console.log(err);
+        }  
+    }
+
+    </script>
+
+    
+{% endblock %}
+
+

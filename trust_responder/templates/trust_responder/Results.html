@@ -1,0 +1,37 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Payment (Game {{ Current_Game_enum }}/6)
+{% endblock %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper instructions">
+    {# * responder * #}
+        <p>
+        Round {{payment_round }} is randomly chosen for payment, where
+            Participant A sent you {{ sent_amount }} tokens.
+            They were tripled so you received {{ tripled_amount }} tokens.
+            You chose to return {{ p2_send_back }} tokens.
+        </p>
+        <p>
+        Together with your endowment of 5 tokens, you now have:
+        5 + {{ tripled_amount }} - {{ p2_send_back }} = <strong>{{ player.payoff_token }} tokens</strong>. 
+        </p>
+
+        <p>
+        In Game {{ Current_Game_enum }}, your total payoff is: 20 * {{ player.payoff_token }} tokens = 
+        <b> {{player.payoff}} </b>
+        </p>
+    {% next_button %}
+</div>
+
+{% include Constants.instructions_template %}
+
+{% endblock %}

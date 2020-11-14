@@ -1,0 +1,62 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome   
+{% endblock %}
+
+{% block content %}
+
+
+    <h3>Setting</h3>
+    You are packing your backpack and have 10 items to choose from. Each item has a certain weight and value to you. You want to maximize the value of the items in your backpack. However, your backpack can only carry a limited weight of items (the capacity).
+    <br>
+    <br>
+    <h3>Your Task</h3>
+    You play {{num_rounds}} rounds with different items and backpacks.
+    <br>
+    <br>
+    In each round, the weight in pounds (lb) and value in US Dollars Cents (&#162;) of each item will be presented to you in a table. 
+    <br>
+    You can put as many items in your backpack as you like, as long as the total weight of all selected items does not exceed the backpack's capacity. Once you have made your choice, you hit the button “Fix your selection and finish round”.
+    <br>
+    <br>
+    After you have finished the {{num_rounds}} rounds, you receive the sum of all selected values together with the fixed reward of {{fixed_reward_dollar}}.
+    <br>
+    <br>
+    <p id="text_begin_placeholder"></p>
+    <br>
+    <p id="decision_table_placeholder"></p>
+    <br>
+    <p id="table_explanation_placeholder"></p>
+    <br>
+    
+
+    <!-- Input Tags to get Data from oTree -->
+    <input type="hidden" name="{{ text_begin }}" id="id_text_begin" />
+    <input type="hidden" name="{{ table_explanation }}" id="id_table_explanation" />
+    <input type="hidden" name="{{ round_capacity }}" id="id_capacity" />
+    <input type="hidden" name="{{ decision_table }}" id="id_decision_table" />
+    
+    <!-- Set Link Color to black - otherwise table headings look weird -->
+    <style>
+        a {
+            color: black;
+        }
+    </style>
+
+    <!-- Java Script to set local page variables -->
+    <script type="text/javascript"  language="javascript" >
+        $('#text_begin_placeholder').html(document.getElementById("id_text_begin").name);
+        $('#table_explanation_placeholder').html(document.getElementById("id_table_explanation").name);
+    </script>
+
+    <!-- External generic Java Scripts -->
+    <script src="/static/java_script/create_decision_table.js"></script>
+    <script src="/static/java_script/table_sort.js"></script>
+    <script src="/static/java_script/compute_weight.js"></script>
+
+    {% next_button %}
+{% endblock %}
+
+

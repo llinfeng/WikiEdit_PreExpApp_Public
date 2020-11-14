@@ -1,0 +1,63 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% load i18n %}
+
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{# *** TITLE *** #}
+{% block title %}
+    You have earned {{ payoff }} from one of your decisions.
+{% endblock %}
+
+
+{# *** CONTENT *** #}
+{% block content %}
+
+<div class="wrapper instructions">
+    <h5>
+        Are you willing to spend some points to find out which decision was picked?
+    </h5>
+
+    <p>
+    Please choose any amount between 0 pt and 40 pts, inclusive, to indicate your
+    willingness to pay for the information. The computer has picked a random number
+    between 0 pt and 40 pts as well. 
+    </p>
+
+    <ul>
+    <li>
+    If your chosen amount is greater than or equal to the amount picked by the
+    computer, you will find out which lottery was used and then pay the price equal
+    to the amount picked by the computer. 
+    </li>
+    <li>
+    Otherwise, you will not find out which lottery was used and will keep your current payoff.
+    </li>
+    </ul>
+
+
+    <p>
+    Please specify the amount you are willing to pay using the following slider.
+    </p>
+
+    <center>
+    <div class="input-group">
+        <span class="input-group-text">0 pt</span>
+        <input type="range" name="mpl_WTP" value="0" max="40" step="1" oninput="num.value = this.value">
+        <span class="input-group-text">40 pts</span>
+        Your willingness to pay is: <output name="mpl_WTP" id="num" script="padding:10px"> 0</output>
+    </div>
+    </center>
+</div>
+
+
+        
+
+    {% next_button %}
+
+{% endblock %}

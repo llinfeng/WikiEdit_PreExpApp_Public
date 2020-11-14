@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{# *** TITLE *** #}
+{% block title %}
+    Introduction (Game {{ Current_Game_enum }}/6)
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper instructions">
+    <p>
+    This game has 6 rounds. The computer will randomly draw one round to pay you. 
+    </p>
+    <p>
+    Note that, "tokens" are used here instead of "points". Each token is worth 20 points in this experiment.
+    </p>
+</div>
+
+
+{% include Constants.instructions_template %}
+
+{% next_button %}
+
+{% endblock %}

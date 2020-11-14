@@ -1,0 +1,35 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block title %}
+Your Guess (Game {{ Current_Game_enum }}/6, Round {{the_round_number }})
+{% endblock %}
+
+{% block content %}
+
+
+<div class="wrapper instructions">
+    {% if player.round_number > 1 %}
+        <p>
+            Here were the two-thirds averages from the previous rounds:
+        </p>
+    <p style="text-align:center; font-size:20px">
+            {{ player.two_thirds_avg_history }}
+    </p>
+    {% endif %}
+
+
+    {% formfields %}
+</div>
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

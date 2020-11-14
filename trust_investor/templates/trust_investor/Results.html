@@ -1,0 +1,41 @@
+{% extends "global/Page.html" %}
+
+{% load otree %}
+
+{% block title %}
+    Payment (Game {{ Current_Game_enum }}/6)
+{% endblock %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper instructions">
+    {# * investor * #}
+    <p>
+    You chose to send {{ sent_amount }} tokens to
+    Participant B.
+    Participant B returned {{ sent_back_amount }} tokens.
+    </p>
+    <p>
+    You were initially given {{ Constants.endowment }} tokens,
+    chose to send {{ sent_amount }} tokens to Participant B and 
+    received {{ sent_back_amount }} tokens back. 
+    Thus you now have:
+    {{ Constants.endowment }}-{{ sent_amount }}+{{ sent_back_amount }}=<strong>{{ player.payoff_token }} tokens</strong>
+    </p>
+        In Game {{ Current_Game_enum }}, your total payoff is 20 * {{ player.payoff_token }} tokens = 
+        <b> {{player.payoff}} </b>
+    </p>
+
+    <p>
+</div>
+
+<p>{% next_button %}</p>
+
+{% include Constants.instructions_template %}
+
+{% endblock %}

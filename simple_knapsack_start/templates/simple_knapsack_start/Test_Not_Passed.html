@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Test not passed   
+{% endblock %}
+
+{% block content %}
+
+    Unfortunately, you have answered at least one of the comprehension questions incorrectly. <b>Thus, you cannot pariticipate in this HIT and do not receive a reward.</b>
+    <br>
+    <br>
+    Thank you very much and have a nice day!
+    <br>
+    <br>
+    {% next_button %}
+{% endblock %}
+
+

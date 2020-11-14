@@ -1,0 +1,187 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 1
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        How competitive do you consider yourself?
+        </p>
+        <p>
+        Please choose a value on the scale below, where the value 0 means "not
+        competitive at all" and the value 10 means "very competitive".
+        </p>
+        {% formfield player.competitiveness %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Generally speaking, would you say that most people can be trusted or
+        that you can't be too careful in dealing with people?
+        </p>
+        {% formfield player.trust %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Do you generally procrastinate (e.g. do you delay doing an unpleasant
+        task that needs to get done) or would you rather get an
+        unpleasant task done right away? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: 
+         "procrastinate whenever possible" and the
+        value 10 means: "never procrastinate".
+        </p>
+        {% formfield player.procrastinate1 %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Do you have a clear vision for what you want your future to
+        look like or do you feel you don't yet have a plan? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: "no particular
+        plan yet" and the value 10 means: "know
+        exactly what you want to do".
+        </p>
+        {% formfield player.procrastinate2 %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Would you agree that you often think about your future goals and what
+        you need to do to achieve them? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: 
+        "never think about the future and never plan ahead"
+        and the value 10 "always think about the future and plan ahead".
+        </p>
+        {% formfield player.procrastinate3 %}
+    </div>
+
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Are you generally a person who is willing to take risks or do you try
+        to avoid taking risks?
+        </p>
+        <p>
+        Please select one from the following, 
+        where the value 0 means "not at all willing to take risks" and the value
+        10 means "very willing to take risks"
+        </p>
+        {% formfield player.risk_preference %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Individuals may have different risk tolerance depending on the situation.
+        How would you rate your
+        risk tolerance in the following 6 situations?
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: "very risk
+        averse" and the value of 10 "very willing to take risks". 
+        </p>
+        <div class="wrapper instructions">
+            <p>
+            While driving? 
+            </p>
+            {% formfield player.risk_tolarence_dirving %}
+        </div>
+        <div class="wrapper instructions">
+            <p>
+            For investments? 
+            </p>
+            {% formfield player.risk_tolarence_investment %}
+        </div>
+        <div class="wrapper instructions">
+            <p>
+            During freetime and sports? 
+            </p>
+            {% formfield player.risk_tolarence_sports %}
+        </div>
+        <div class="wrapper instructions">
+            <p>
+            In your professional career?
+            </p>
+            {% formfield player.risk_tolarence_professional %}
+        </div>
+        <div class="wrapper instructions">
+            <p>
+            With your health?
+            </p>
+            {% formfield player.risk_tolarence_health %}
+        </div>
+        <div class="wrapper instructions">
+            <p>
+            At trust in strangers?
+            </p>
+            {% formfield player.risk_tolarence_strangers %}
+        </div>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Which of the following do you identify with?
+        </p>
+        {% formfield player.gender %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your ethnicity?
+        </p>
+        {% formfield player.ethinicity %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your major?
+        </p>
+        {% formfield player.major %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your approximate cumulative GPA? 
+        </p>
+        {% formfield player.gpa_overall %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What grade do you expect to receive for Econ 401?
+        </p>
+        {% formfield player.Econ401_LetterGrade %}
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

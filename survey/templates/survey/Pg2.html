@@ -1,0 +1,66 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 2
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Do you generally procrastinate (e.g. do you delay doing an unpleasant
+        task that needs to get done) or would you rather get an
+        unpleasant task done right away? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: 
+         "procrastinate whenever possible" and the
+        value 10 means: "never procrastinate".
+        </p>
+        {% formfield player.procrastinate1 %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Do you have a clear vision for what you want your future to
+        look like or do you feel you don't yet have a plan? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: "no particular
+        plan yet" and the value 10 means: "know
+        exactly what you want to do".
+        </p>
+        {% formfield player.procrastinate2 %}
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        Would you agree that you often think about your future goals and what
+        you need to do to achieve them? 
+        </p>
+        <p>
+        Please select one from the following, where the value 0 means: 
+        "never think about the future and never plan ahead"
+        and the value 10 "always think about the future and plan ahead".
+        </p>
+        {% formfield player.procrastinate3 %}
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{# *** TITLE *** #}
+{% block title %}
+    Your Decision (Game {{ Current_Game_enum }}/6, Round 1)
+{% endblock %}
+
+
+{% block content %}
+<div class="wrapper instructions">
+    <p>
+        You are Participant B. <br>
+        Participant A sent you <b>{{investment_amount}} token</b>.
+        Now you have a total of <b>{{responder_total}} tokens</b>.
+        <br>
+        How many tokens will you send to Participant A?
+    </p>
+
+    {% formfields %}
+    <p>{% next_button %}</p>
+</div>
+
+{% include Constants.instructions_template %}
+
+{% endblock %}

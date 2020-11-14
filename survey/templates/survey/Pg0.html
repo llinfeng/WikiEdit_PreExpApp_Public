@@ -1,0 +1,27 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 1
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+
+
+
+    {% next_button %}
+
+{% endblock %}

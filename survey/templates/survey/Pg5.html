@@ -1,0 +1,40 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Survey - Part 5
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="wrapper instructions">
+    <p>
+        Please answer the following questions.
+    </p>
+    </div>
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What is your approximate cumulative GPA? 
+        </p>
+        {% formfield player.gpa_overall %}
+    </div>
+
+
+    <div class="wrapper instructions">
+        <p class="survey-question" >
+        What grade do you expect to receive for Econ 401?
+        </p>
+        {% formfield player.Econ401_LetterGrade %}
+    </div>
+
+
+    {% next_button %}
+
+{% endblock %}

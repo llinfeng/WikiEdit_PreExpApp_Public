@@ -1,0 +1,31 @@
+
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    .page-header {
+        text-align:center
+    }
+</style>
+
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block title %}
+    Completion Page
+{% endblock %}
+
+{% block content %}
+
+    <div class="wrapper instructions">
+        Thank you for completing the games and survey. Please look out for
+        another email introducing a new set of bonus point activities.
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Introduction (Game {{ Current_Game_enum }}/6)
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper instructions">
+    <p>
+    This game has only one round. Your payoff depends on your decision as well
+    as the decision of the other participant you are paired with. 
+    </p>
+    <p>
+    Note that, the decisions for your opponent were elicited in a game similar to
+    the game you just played, Game 2.
+    Again, "tokens" are used instead of "points" as you see in other parts of
+    the experiment.
+    </p>
+</div>
+
+
+    {% include Constants.instructions_template %}
+
+    {% next_button %}
+
+{% endblock %}

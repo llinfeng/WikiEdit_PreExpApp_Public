@@ -1,0 +1,34 @@
+{% load otree %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+<div class="wrapper instructions">
+    <h3>
+        Instructions for "Guess 2/3 of the average"
+    </h3>
+
+    <p>
+        You are in a group of 4 participants. The other three participants are
+        Econ 401 students like you who have played this game previously. 
+        Your group will be fixed throughout all five rounds in this game.
+    </p>
+    <p>
+        All participants will choose a
+        number between 0 and {{ Constants.guess_max }}.
+        The winner will be the participant whose
+        number is closest to 2/3 of the
+        average of all chosen numbers.
+    </p>
+    <p>
+        The winner will receive {{ Constants.jackpot }}.
+        In case of a tie, the {{ Constants.jackpot }}
+        will be equally divided among winners.
+    </p>
+
+    <p>Note that, this game will be played for 5 rounds.
+    The computer will randomly draw one round to determine your payoff.
+    </p>
+</div>

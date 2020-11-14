@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Welcome
+{% endblock %}
+
+{% block content %}
+
+    Thank you for joining our Human Intelligence Task (HIT).
+    <br>
+    This HIT is not designed for smartphones or tablets. Please use a personal computer or laptop to participate.
+    <br>
+    After participating in this HIT, you will receive a fixed reward of {{fixed_reward_dollar}} USD and up to XXX USD depending on your performance. You will receive the payout within 12 hours afer your participation.
+    <br>
+    <br>
+    If you agree and want to proceed, please click "Next".
+    <br>
+    {% next_button %}
+
+{% endblock %}

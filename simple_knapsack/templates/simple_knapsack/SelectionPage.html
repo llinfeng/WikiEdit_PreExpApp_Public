@@ -1,0 +1,64 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Select your spare parts
+{% endblock %}
+
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="wrapper instructions">
+
+    For each item, you know its value (points) and weight (lb). You can sort the table by clicking on the respective column headings.<br>
+    <br>
+    The <b>capacity</b> in this round is <b>{{round_capacity}} lb</b> and the <em>optimal
+        solution</em> can yield a total of <b>{{max_point}} points</b>. Please select the
+    items you want to place in your backpack:
+    <br>
+    <!-- <button type="button" onclick=saveSelection()>Development Test Button</button> -->
+    <br>
+    <br>
+    <p id="decision_table_placeholder"></p>
+    <br>
+    <p id="message"><br></p>
+
+    <button class="otree-btn-next btn btn-primary next-button otree-next-button" id="Next_Button" onclick="saveSelection()" style="float: right;">Fix your Selection and finish round</button>
+
+    <!-- Input Tags to get Data from oTree -->
+    <input type="hidden" name="{{ round_part_set_number }}" id="id_r_set_number" />
+    <input type="hidden" name="{{ round_capacity }}" id="id_capacity" />
+    <input type="hidden" name="{{ decision_table }}" id="id_decision_table" />
+
+    <!-- Input Tags to record answers -->
+    <input type="hidden" name="round_weight" id="id_r_weight" />
+    <input type="hidden" name="round_value" id="id_r_value" />
+    <input type="hidden" name="round_selection" id="id_sel" />
+    <input type="hidden" name="total_weight" id="id_total_weight" />
+    <input type="hidden" name="total_value" id="id_total_value" />
+
+
+    <!-- Debug Information -->
+    {{ form.errors }}
+
+    <!-- Set Link Color to black - otherwise table headings look weird -->
+    <style>
+    a {
+        color: black;
+    }
+    </style>
+   
+    <script src="/static/java_script/create_decision_table.js"></script>
+    <script src="/static/java_script/table_sort.js"></script>
+    <script src="/static/java_script/compute_weight.js"></script>
+    <script src="/static/java_script/save_selection.js"></script>
+</div>
+
+{% endblock %}

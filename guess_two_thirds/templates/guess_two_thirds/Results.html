@@ -1,0 +1,49 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+Results (Game {{ Current_Game_enum }}/6, Round {{the_round_number }})
+{% endblock %}
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{% block content %}
+
+<div class="wrapper instructions">
+    <p>The guesses were the following:</p>
+
+    <p style="text-align:center; font-size:20px">
+        {{ sorted_guesses }}
+    </p>
+
+    <p>
+        Two-thirds of the average of these numbers is {{ player.two_thirds_avg }} 
+        and
+        the closest guess was {{ player.best_guess }}.
+    </p>
+
+    <p>Your guess was {{ player.guess }}.</p>
+
+    <p>
+        {% if player.is_winner %}
+            {% if player.num_winners > 1 %}
+                Therefore, you are one of the {{ player.num_winners }} winners
+                who tied for the best guess.
+            {% else %}
+                You won!
+                {% endif %}
+        {% else %}
+            Therefore, you did not win.
+        {% endif %}
+    Your payoff is {{ player.payoff }}.
+    </p>
+</div>
+
+    {% next_button %}
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}

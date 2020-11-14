@@ -1,0 +1,20 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+
+{# *** STYLES *** #}
+{% block styles %}
+    <link href="{% static 'global/custom.css' %}" rel="stylesheet"/>
+{% endblock %}
+
+{# *** TITLE *** #}
+{% block title %}
+    Introduction (Game {{ Current_Game_enum }}/6)
+{% endblock %}
+
+{% block content %}
+
+    {% include Constants.instructions_template %}
+    {% next_button %}
+
+{% endblock %}

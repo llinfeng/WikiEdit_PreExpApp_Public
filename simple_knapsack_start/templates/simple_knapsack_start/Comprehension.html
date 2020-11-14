@@ -1,0 +1,21 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Quizz   
+{% endblock %}
+
+{% block content %}
+
+    Please answer the following comprehension questions to proceed to the HIT. <b>If you do not answer these questions correctly, you will not be able to participate in the HIT and you do not receive a reward.</b>
+    <br>
+    <br>
+    {% formfields %}
+    <br>
+    If you have answered all questions, pleas click “Next”.
+    <br>
+    <br>
+    {% next_button %}
+{% endblock %}
+
+
