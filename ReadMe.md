@@ -1,10 +1,10 @@
 This repository contains the source code for the survey-experiment interface we
 used to collect the Pre-treatment measurements.
 
-A publically available demo interface is hosted on Heroku. [Here is a
-link](https://wikiedit-onboard-public-access.herokuapp.com/demo/) to access the
-demo interface. Click on the link in the red box to launch a demo session, where
-one can get a link for single-use link for player *P1*.
+A publically available demo interface is hosted on Heroku. [Click
+here](https://wikiedit-onboard-public-access.herokuapp.com/demo/) to access the
+demo interface. Then, click on the link in the red box to launch a demo session,
+where one can get a link for single-use link for player **P1**.
 
 ![Launch demo](img/LaunchDemo.png)
 
