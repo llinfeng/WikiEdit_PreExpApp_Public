@@ -24,9 +24,9 @@ of apps) section below.
 # Notes for calculating payoff:
 Students do not see their total points at the end of the experiment. Whenever
 necessary, the will see the payoff for each round.
-1. Holt & Laury with curiosity: payoff is revealed, but not necesarily the
-   lottery chosen for payment;
-2. Trust respondre - Strateg method - revealed payment upon finishing
+1. Holt & Laury with curiosity: payoff is revealed, the exact lottery entry
+   chosen for payment is not revealed;
+2. Trust responder - Strategy method - revealed payment upon finishing
 3. Trust investor - paired with a randomly drawn opponent, payoff revealed upon
    finishing;
 4. p-Beauty contest: over 5 rounds, 1 round is chosen for payment. There is a
@@ -43,7 +43,8 @@ For apps hosted in a session, the app sequence is fixed
   beta feature: skipping many pages or apps](https://groups.google.com/g/otree/c/T6DsbOv712Q/m/Qq_Tv8ZBAgAJ)
 
 * [ ] There is a way to solve this, to span out all combination of the app
-      sequences and send them out!
+      sequences and send them out from a full set of sessions. This adds to
+      the administrative burden, and may be suitable a team of at least two RAs.
 
 
 ## Style of the games
